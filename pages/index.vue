@@ -22,6 +22,8 @@
         </div>
       </div>
 
+      <home-link />
+
       <night-mode-toggle />
 
       <div class="w-full md:w-1/2 order-2 md:order-4">
@@ -35,6 +37,7 @@
 import axios from "axios";
 import Config from "~/assets/config";
 
+import HomeLink from "@/components/HomeLink";
 import PostLinks from "@/components/PostLinks";
 import PostContent from "@/components/PostContent";
 import SocialLinks from "@/components/SocialLinks";
@@ -48,6 +51,7 @@ export default {
     };
   },
   components: {
+    HomeLink,
     PostLinks,
     PostContent,
     SocialLinks,

@@ -16,6 +16,8 @@
       </div>
     </div>
 
+    <home-link />
+
     <night-mode-toggle />
   </div>
 </template>
@@ -24,12 +26,14 @@
 import axios from "axios";
 import Config from "~/assets/config";
 
+import HomeLink from "@/components/HomeLink";
 import PostLinks from "@/components/PostLinks";
 import PostContent from "@/components/PostContent";
 import NightModeToggle from "@/components/NightModeToggle";
 
 export default {
   components: {
+    HomeLink,
     PostLinks,
     PostContent,
     NightModeToggle

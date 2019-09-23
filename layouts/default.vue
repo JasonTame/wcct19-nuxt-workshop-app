@@ -87,6 +87,11 @@ a:focus {
   margin: 0;
 }
 
+.post-content video {
+  max-width: 100%;
+  height: auto;
+}
+
 @media only screen and (min-width: 769px) {
   .post-content img {
     max-width: 425px;

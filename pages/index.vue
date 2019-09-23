@@ -6,24 +6,17 @@
           class="max-w-md md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0"
         >
           <p class="font-bold my-4 md:mt-12 md:mb-4">Recent Posts</p>
-          <ul class="flex flex-wrap justify-between flex-col">
-            <li :key="post.id" v-for="post in latestPostLinks">
-              <nuxt-link :to="`/posts/${post.id}`" v-html="post.title.rendered"></nuxt-link>
-            </li>
-          </ul>
+          <post-links :posts="latestPostLinks" />
           <nuxt-link to="/posts/" class="normal font-bold hover:font-bold">more...</nuxt-link>
         </div>
       </div>
       <div class="w-full md:w-1/2 order-1 md:order-2">
-        <div class="max-w-md leading-loose tracking-tight">
-          <h1 class="font-bold my-12">{{latestPost.title.rendered}}</h1>
-          <div class="post-content" v-html="latestPost.content.rendered"></div>
-        </div>
+        <post-content />
       </div>
 
-      <div class="w-full md:w-1/2 md:pr-32 pt-12 md:pt-0 md:sticky md:bottom-0 order-4 md:order-3">
+      <div class="w-full md:w-1/2 md:pr-32 mt-12 md:pt-0 md:sticky md:bottom-0 order-4 md:order-3">
         <div class="max-w-md md:float-right md:text-right leading-loose tracking-tight md:mb-16">
-          <p class="font-bold my-4 md:mt-12 md:mb-4">Contact</p>
+          <p class="font-bold my-4 md:mt-16 md:mb-4">Contact</p>
 
           <social-links />
         </div>
@@ -64,9 +57,6 @@ export default {
   computed: {
     latestPostLinks() {
       return this.$store.state.posts.filter((post, idx) => idx < 3);
-    },
-    latestPost() {
-      return this.$store.state.posts[0];
     }
   }
 };

@@ -6,7 +6,7 @@
           class="max-w-md md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0"
         >
           <p class="font-bold my-4 md:my-12">Posts</p>
-          <post-links />
+          <post-links :posts="this.$store.state.posts" />
         </div>
       </div>
       <div class="w-full md:w-1/2 order-1 md:order-2">

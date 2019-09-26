@@ -14,11 +14,13 @@ export default {
   },
   computed: {
     currentPost() {
-      let postID = this.$route.params.id
-        ? this.$route.params.id
-        : this.$store.state.posts[0].id;
+      let postSlug = this.$route.params.slug
+        ? this.$route.params.slug
+        : this.$store.state.posts[0].slug;
 
-      let currentPost = this.$store.state.posts.find(post => post.id == postID);
+      let currentPost = this.$store.state.posts.find(
+        post => post.slug == postSlug
+      );
 
       this.$store.commit("setCurrentPost", currentPost);
       return currentPost;
